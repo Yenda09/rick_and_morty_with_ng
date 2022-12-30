@@ -1,0 +1,6 @@
+@import 'src/app/styles/_fonts-and-colors.scss';
+
+@mixin hoverEffect {
+  color: $tertiary-color;
+  cursor: pointer;
+}

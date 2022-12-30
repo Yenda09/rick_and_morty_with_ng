@@ -1,4 +1,5 @@
 @import 'src/app/styles/_fonts-and-colors.scss';
+@import 'src/app/styles/_hover.scss';
 
 article {
   display: flex;
@@ -43,6 +44,5 @@ h4 {
 }
 
 .hover:hover {
-  color: $tertiary-color;
-  cursor: pointer;
+  @include hoverEffect;
 }
