@@ -1,0 +1,7 @@
+<app-hero></app-hero>
+<section class="generic-card-container">
+  <app-generic-card
+  *ngFor="let character of allCharacters"
+  [character]="character" >
+</app-generic-card>
+</section>
