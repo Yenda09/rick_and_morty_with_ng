@@ -3,7 +3,7 @@
 section {
   position: relative;
   width: 100%;
-  height: 25rem;
+  height: 20rem;
 }
 svg {
   position: absolute;
@@ -18,7 +18,15 @@ svg {
 h1 {
   position: absolute;
   z-index: 2;
-  top: calc(50% - 1.6rem);
-  left: calc(50% - 10rem);
+  top: calc(50% - 2rem);
+  left: calc(50% - 12.5rem);
   color: $main-color;
+}
+
+@media (min-width: 500px) {
+  h1 {
+    top: calc(50% - 3rem);
+    left: calc(50% - 18rem);
+    font-size: 6rem;
+  }
 }
