@@ -1,0 +1,61 @@
+@import 'src/app/styles/_fonts-and-colors.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h1 {
+  font-family: $font-family-title;
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+h2 {
+  font-family: $font-family-title;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+h3 {
+  font-family: $font-family-title;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+h4 {
+  font-family: $font-family-title;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+p {
+  font-family: $font-family-text;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
