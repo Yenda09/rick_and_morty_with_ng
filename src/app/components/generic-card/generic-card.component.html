@@ -1,0 +1,19 @@
+<article>
+  <figure>
+    <img [src]="character.image" [alt]="character.name">
+  </figure>
+  <div class="card__info-container">
+    <div>
+      <h3>{{ character.name }}</h3>
+      <p>{{character.status}} - {{character.species}}</p>
+    </div>
+    <div>
+      <h4>Last known location:</h4>
+      <p class="hover">{{character.location.name}}</p>
+    </div>
+    <div>
+      <h4>First seen in:</h4>
+      <p class="hover">{{character.origin.name}}</p>
+    </div>
+  </div>
+</article>
