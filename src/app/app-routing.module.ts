@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home/home.component';
-import { EpisodesComponent } from './pages/episodes/episodes/episodes.component';
-import { LocationsComponent } from './pages/locations/locations/locations.component';
-import { NotFoundComponent } from './pages/not-found/not-found/not-found.component';
+import { HomeComponent } from './pages/home/home.component';
+import { EpisodesComponent } from './pages/episodes/episodes.component';
+import { LocationsComponent } from './pages/locations/locations.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
