@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
     this.apiService.getAllCharacters()
       .subscribe (data => {
         this.allCharacters = data.results
-        console.log(data)
       })
   }
 
