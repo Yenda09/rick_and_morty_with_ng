@@ -39,4 +39,21 @@
       <p class="hover">{{episode.air_date}}</p>
     </div>
   </div>
+
+  <div
+    *ngIf="locationPage"
+    class="card__info-container">
+    <div>
+      <h4>Name:</h4>
+      <p class="hover">{{location.name}}</p>
+    </div>
+    <div>
+      <h4>Type:</h4>
+      <p class="hover">{{location.type}}</p>
+    </div>
+    <div>
+      <h4>Dimension:</h4>
+      <p class="hover">{{location.dimension}}</p>
+    </div>
+  </div>
 </article>

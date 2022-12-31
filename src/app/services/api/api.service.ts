@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 
-import { ApiResponseCharacters, ApiResponseEpisodes } from 'src/app/models/api-response.model';
+import { ApiResponseCharacters, ApiResponseEpisodes, ApiResponseLocations } from 'src/app/models/api-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,9 @@ export class ApiService {
 
   getAllEpisodes (){
     return this.http.get<ApiResponseEpisodes>(`${this.apiUrl}/episode`);
+  }
+
+  getAllLocations (){
+    return this.http.get<ApiResponseLocations>(`${this.apiUrl}/location`);
   }
 }

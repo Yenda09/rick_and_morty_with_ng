@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Character } from 'src/app/models/character.model';
 import { Episode } from 'src/app/models/episode.model';
+import { LocationModel } from 'src/app/models/location.model';
 
 @Component({
   selector: 'app-generic-card',
@@ -36,10 +37,19 @@ export class GenericCardComponent implements OnInit {
     url: '',
     created: '',
   }
+  @Input() location: LocationModel = {
+    id: 0,
+    name: '',
+    type: '',
+    dimension: '',
+    residents: [''],
+    url: '',
+    created: '',
+  }
 
   homePage: boolean = false;
-  episodePage: boolean = true;
-  locationPage: boolean = false;
+  episodePage: boolean = false;
+  locationPage: boolean = true;
 
   constructor() { }
 

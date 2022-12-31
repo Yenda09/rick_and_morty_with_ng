@@ -1,0 +1,5 @@
+@import 'src/app/styles/_generic-card-container.scss';
+
+.generic-card-container {
+  @include generic-card-container;
+}
