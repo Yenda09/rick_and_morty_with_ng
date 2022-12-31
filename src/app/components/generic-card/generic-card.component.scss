@@ -12,6 +12,10 @@ article {
 }
 
 figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   border-radius: 1rem 0 0 1rem;
   overflow: hidden;
@@ -21,6 +25,10 @@ img {
   height: 100%;
   transform: scale(1.1);
   cursor: pointer;
+}
+svg {
+  opacity: 0.8;
+  fill: $secondary-color;
 }
 
 .card__info-container {
