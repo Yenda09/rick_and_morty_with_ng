@@ -1,0 +1,10 @@
+@import 'src/app/styles/_fonts-and-colors.scss';
+
+@mixin generic-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30rem);
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem 0;
+  background-color: $dark-color;
+}
