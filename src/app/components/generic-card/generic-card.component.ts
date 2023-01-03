@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { Character } from 'src/app/models/character.model';
 import { Episode } from 'src/app/models/episode.model';
 import { LocationModel } from 'src/app/models/location.model';
@@ -47,13 +49,32 @@ export class GenericCardComponent implements OnInit {
     created: '',
   }
 
-  homePage: boolean = false;
+  homePage: boolean = true;
   episodePage: boolean = false;
-  locationPage: boolean = true;
+  locationPage: boolean = false;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.navigator();
   }
 
+  navigator (){
+    let myPathName = window.location.pathname;
+    if (myPathName === '/episodes'){
+      this.homePage = false;
+      this.episodePage = true;
+      this.locationPage = false;
+    } else if (myPathName === '/locations'){
+      this.homePage = false;
+      this.episodePage = false;
+      this.locationPage = true;
+    } else {
+      this.homePage = true;
+      this.episodePage = false;
+      this.locationPage = false;
+    }
+  }
 }
