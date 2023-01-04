@@ -27,14 +27,18 @@ export class HomeComponent implements OnInit {
     this.page = pageNumber;
     this.apiService.getAllCharacters(this.page)
       .subscribe (data => {
-        this.allCharacters = data.results
+        this.allCharacters = data.results;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       })
   }
   onNextPage (pageNumber: number){
     this.page = pageNumber;
     this.apiService.getAllCharacters(this.page)
       .subscribe (data => {
-        this.allCharacters = data.results
+        this.allCharacters = data.results;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       })
   }
 

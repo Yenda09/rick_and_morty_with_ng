@@ -27,7 +27,9 @@ export class EpisodesComponent implements OnInit {
     this.page = pageNumber;
     this.apiService.getAllEpisodes(this.page)
       .subscribe (data => {
-        this.allEpisodes = data.results
+        this.allEpisodes = data.results;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       })
   }
 
@@ -35,7 +37,9 @@ export class EpisodesComponent implements OnInit {
     this.page = pageNumber;
     this.apiService.getAllEpisodes(this.page)
       .subscribe (data => {
-        this.allEpisodes = data.results
+        this.allEpisodes = data.results;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       })
   }
 }

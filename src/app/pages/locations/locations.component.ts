@@ -27,7 +27,9 @@ export class LocationsComponent implements OnInit {
     this.page = pageNumber;
     this.apiService.getAllLocations(this.page)
       .subscribe (data => {
-        this.allLocations = data.results
+        this.allLocations = data.results;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       })
   }
 
@@ -35,7 +37,9 @@ export class LocationsComponent implements OnInit {
     this.page = pageNumber;
     this.apiService.getAllLocations(this.page)
       .subscribe (data => {
-        this.allLocations = data.results
+        this.allLocations = data.results;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
       })
   }
 }
