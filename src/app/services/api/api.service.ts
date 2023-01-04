@@ -15,15 +15,21 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  getAllCharacters (){
-    return this.http.get<ApiResponseCharacters>(`${this.apiUrl}/character`);
+  getAllCharacters (page: number){
+    return this.http.get<ApiResponseCharacters>(`${this.apiUrl}/character`, {
+      params: { page }
+    });
   }
 
-  getAllEpisodes (){
-    return this.http.get<ApiResponseEpisodes>(`${this.apiUrl}/episode`);
+  getAllEpisodes (page: number){
+    return this.http.get<ApiResponseEpisodes>(`${this.apiUrl}/episode`, {
+      params: { page }
+    });
   }
 
-  getAllLocations (){
-    return this.http.get<ApiResponseLocations>(`${this.apiUrl}/location`);
+  getAllLocations (page: number){
+    return this.http.get<ApiResponseLocations>(`${this.apiUrl}/location`, {
+      params: { page }
+    });
   }
 }

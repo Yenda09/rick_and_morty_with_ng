@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { IndivdualCardComponent } from './components/indivdual-card/indivdual-card.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { IndivdualCardComponent } from './components/indivdual-card/indivdual-ca
     NavbarComponent,
     HeroComponent,
     GenericCardComponent,
-    IndivdualCardComponent
+    IndivdualCardComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

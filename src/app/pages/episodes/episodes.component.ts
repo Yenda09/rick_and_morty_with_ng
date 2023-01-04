@@ -10,16 +10,32 @@ import { Episode } from 'src/app/models/episode.model';
 })
 export class EpisodesComponent implements OnInit {
   allEpisodes: Episode[] = [];
-
+  page: number = 1;
+  allPages: number = 3;
   constructor(
     private apiService: ApiService
   ) { }
 
   ngOnInit(): void {
-    this.apiService.getAllEpisodes()
+    this.apiService.getAllEpisodes(this.page)
       .subscribe (data => {
         this.allEpisodes = data.results
       })
   }
 
+  onPrevPage (pageNumber: number){
+    this.page = pageNumber;
+    this.apiService.getAllEpisodes(this.page)
+      .subscribe (data => {
+        this.allEpisodes = data.results
+      })
+  }
+
+  onNextPage (pageNumber: number){
+    this.page = pageNumber;
+    this.apiService.getAllEpisodes(this.page)
+      .subscribe (data => {
+        this.allEpisodes = data.results
+      })
+  }
 }

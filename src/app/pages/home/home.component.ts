@@ -10,13 +10,29 @@ import { Character } from "src/app/models/character.model";
 })
 export class HomeComponent implements OnInit {
   allCharacters: Character[] = [];
+  page: number = 1;
 
   constructor(
     private apiService: ApiService
   ) { }
 
   ngOnInit(): void {
-    this.apiService.getAllCharacters()
+    this.apiService.getAllCharacters(this.page)
+      .subscribe (data => {
+        this.allCharacters = data.results
+      })
+  }
+
+  onPrevPage (pageNumber: number){
+    this.page = pageNumber;
+    this.apiService.getAllCharacters(this.page)
+      .subscribe (data => {
+        this.allCharacters = data.results
+      })
+  }
+  onNextPage (pageNumber: number){
+    this.page = pageNumber;
+    this.apiService.getAllCharacters(this.page)
       .subscribe (data => {
         this.allCharacters = data.results
       })

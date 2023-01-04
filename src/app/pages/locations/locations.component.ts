@@ -10,16 +10,32 @@ import { LocationModel } from 'src/app/models/location.model';
 })
 export class LocationsComponent implements OnInit {
   allLocations: LocationModel[] = [];
+  page: number = 1;
 
   constructor(
     private apiService: ApiService
   ) { }
 
   ngOnInit(): void {
-    this.apiService.getAllLocations()
+    this.apiService.getAllLocations(this.page)
       .subscribe (data => {
         this.allLocations = data.results
       })
   }
 
+  onPrevPage (pageNumber: number){
+    this.page = pageNumber;
+    this.apiService.getAllLocations(this.page)
+      .subscribe (data => {
+        this.allLocations = data.results
+      })
+  }
+
+  onNextPage (pageNumber: number){
+    this.page = pageNumber;
+    this.apiService.getAllLocations(this.page)
+      .subscribe (data => {
+        this.allLocations = data.results
+      })
+  }
 }
