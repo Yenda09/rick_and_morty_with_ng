@@ -13,7 +13,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
-import { IndivdualCardComponent } from './components/indivdual-card/indivdual-card.component';
+import { IndividualCardComponent } from './components/individual-card/individual-card.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     NavbarComponent,
     HeroComponent,
     GenericCardComponent,
-    IndivdualCardComponent,
+    IndividualCardComponent,
     PaginationComponent
   ],
   imports: [
