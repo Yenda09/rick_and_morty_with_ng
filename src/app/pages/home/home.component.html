@@ -2,8 +2,13 @@
 <section class="generic-card-container">
   <app-generic-card
   *ngFor="let character of allCharacters"
-  [character]="character" >
+  [character]="character"
+  (individualCharacter)="onGetCharacterById($event)">
 </app-generic-card>
+</section>
+<section>
+  <app-individual-card>
+  </app-individual-card>
 </section>
 <app-pagination
   (prev)="onPrevPage($event)"

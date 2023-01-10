@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Character } from 'src/app/models/character.model';
@@ -30,7 +30,7 @@ export class GenericCardComponent implements OnInit {
     episode: [''],
     url: '',
     created: '',
-  }
+  };
   @Input() episode: Episode = {
     id: 0,
     name: '',
@@ -38,7 +38,7 @@ export class GenericCardComponent implements OnInit {
     characters: [''],
     url: '',
     created: '',
-  }
+  };
   @Input() location: LocationModel = {
     id: 0,
     name: '',
@@ -47,7 +47,10 @@ export class GenericCardComponent implements OnInit {
     residents: [''],
     url: '',
     created: '',
-  }
+  };
+  @Output() individualCharacter = new EventEmitter<number>();
+  @Output() individualEpisode = new EventEmitter<number>();
+  @Output() individualLocation = new EventEmitter<number>();
 
   homePage: boolean = true;
   episodePage: boolean = false;
@@ -75,6 +78,16 @@ export class GenericCardComponent implements OnInit {
       this.homePage = true;
       this.episodePage = false;
       this.locationPage = false;
+    }
+  }
+
+  showIndividualItem (){
+    if (this.character.id){
+      this.individualCharacter.emit(this.character.id);
+    } else if (this.episode.id){
+      this.individualEpisode.emit(this.episode.id);
+    } else if (this.location.id){
+      this.individualLocation.emit(this.location.id);
     }
   }
 }

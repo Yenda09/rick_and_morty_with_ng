@@ -1,7 +1,8 @@
 <section class="generic-card-container">
   <app-generic-card
   *ngFor="let episode of allEpisodes"
-  [episode]="episode" >
+  [episode]="episode"
+  (individualEpisode)="onGetEpisodeById($event)">
 </app-generic-card>
 </section>
 <app-pagination

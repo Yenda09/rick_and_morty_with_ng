@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from "src/app/services/api/api.service";
 
 import { Character } from "src/app/models/character.model";
@@ -10,6 +10,7 @@ import { Character } from "src/app/models/character.model";
 })
 export class HomeComponent implements OnInit {
   allCharacters: Character[] = [];
+  oneCharacter!: Character;
   page: number = 1;
 
   constructor(
@@ -42,4 +43,11 @@ export class HomeComponent implements OnInit {
       })
   }
 
+  onGetCharacterById (id: number){
+    this.apiService.getCharacterById(id)
+      .subscribe (data => {
+        this.oneCharacter = data;
+        console.log(data);
+      })
+  }
 }

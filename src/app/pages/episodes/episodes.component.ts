@@ -10,8 +10,9 @@ import { Episode } from 'src/app/models/episode.model';
 })
 export class EpisodesComponent implements OnInit {
   allEpisodes: Episode[] = [];
+  oneEpisode!: Episode;
   page: number = 1;
-  allPages: number = 3;
+
   constructor(
     private apiService: ApiService
   ) { }
@@ -40,6 +41,14 @@ export class EpisodesComponent implements OnInit {
         this.allEpisodes = data.results;
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+      })
+  }
+
+  onGetEpisodeById (id: number){
+    this.apiService.getEpisodeById(id)
+      .subscribe(data => {
+        this.oneEpisode = data;
+        console.log(data);
       })
   }
 }

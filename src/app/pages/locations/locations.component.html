@@ -1,7 +1,8 @@
 <section class="generic-card-container">
   <app-generic-card
   *ngFor="let location of allLocations"
-  [location]="location" >
+  [location]="location"
+  (individualLocation)="onGetLocationById($event)">
 </app-generic-card>
 </section>
 <app-pagination
