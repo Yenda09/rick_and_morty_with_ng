@@ -15,6 +15,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { IndividualCardComponent } from './components/individual-card/individual-card.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { IndividualItemComponent } from './pages/individual-item/individual-item.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     HeroComponent,
     GenericCardComponent,
     IndividualCardComponent,
-    PaginationComponent
+    PaginationComponent,
+    IndividualItemComponent
   ],
   imports: [
     BrowserModule,

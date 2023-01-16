@@ -23,7 +23,7 @@ export class ApiService {
       params: { page }
     });
   }
-  getCharacterById (id: number){
+  getCharacterById (id: string){
     return this.http.get<Character>(`${this.apiUrl}/character/${id}`)
   }
 
@@ -32,7 +32,7 @@ export class ApiService {
       params: { page }
     });
   }
-  getEpisodeById (id: number){
+  getEpisodeById (id: string){
     return this.http.get<Episode>(`${this.apiUrl}/episode/${id}`)
   }
 
@@ -41,7 +41,7 @@ export class ApiService {
       params: { page }
     });
   }
-  getLocationById (id: number){
+  getLocationById (id: string){
     return this.http.get<LocationModel>(`${this.apiUrl}/location/${id}`)
   }
 }

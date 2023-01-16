@@ -1,0 +1,9 @@
+@import 'src/app/styles/_fonts-and-colors.scss';
+
+.individual-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 8rem);
+  background-color: $dark-color;
+}
