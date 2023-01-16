@@ -10,7 +10,6 @@ import { Character } from "src/app/models/character.model";
 })
 export class HomeComponent implements OnInit {
   allCharacters: Character[] = [];
-  oneCharacter!: Character;
   page: number = 1;
 
   constructor(
@@ -40,14 +39,6 @@ export class HomeComponent implements OnInit {
         this.allCharacters = data.results;
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-      })
-  }
-
-  onGetCharacterById (id: number){
-    this.apiService.getCharacterById(id)
-      .subscribe (data => {
-        this.oneCharacter = data;
-        console.log(data);
       })
   }
 }

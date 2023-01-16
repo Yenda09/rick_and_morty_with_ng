@@ -81,14 +81,4 @@ export class GenericCardComponent implements OnInit {
       this.locationPage = false;
     }
   }
-
-  showIndividualItem (){
-    if (this.character.id){
-      this.individualCharacter.emit(this.character.id);
-    } else if (this.episode.id){
-      this.individualEpisode.emit(this.episode.id);
-    } else if (this.location.id){
-      this.individualLocation.emit(this.location.id);
-    }
-  }
 }

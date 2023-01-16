@@ -10,7 +10,6 @@ import { LocationModel } from 'src/app/models/location.model';
 })
 export class LocationsComponent implements OnInit {
   allLocations: LocationModel[] = [];
-  oneLocation!: LocationModel;
   page: number = 1;
 
   constructor(
@@ -41,14 +40,6 @@ export class LocationsComponent implements OnInit {
         this.allLocations = data.results;
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-      })
-  }
-
-  onGetLocationById (id: number){
-    this.apiService.getLocationById(id)
-      .subscribe (data => {
-        this.oneLocation = data;
-        console.log(data);
       })
   }
 }

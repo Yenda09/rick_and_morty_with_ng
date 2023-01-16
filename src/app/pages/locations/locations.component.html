@@ -1,10 +1,11 @@
 <section class="generic-card-container">
   <app-generic-card
   *ngFor="let location of allLocations"
-  [location]="location"
-  (individualLocation)="onGetLocationById($event)">
+  [location]="location">
 </app-generic-card>
 </section>
+<section>
+
 <app-pagination
   (prev)="onPrevPage($event)"
   (next)="onNextPage($event)">
