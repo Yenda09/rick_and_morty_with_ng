@@ -1,0 +1,36 @@
+@import 'src/app/styles/_fonts-and-colors.scss';
+
+article {
+  width: 30rem;
+  height: 45rem;
+  margin: 0 auto;
+  background-color: $main-color;
+  border-radius: 3rem;
+  color: $light-color;
+  overflow: hidden;
+}
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+svg {
+  opacity: 0.8;
+  fill: $secondary-color;
+}
+
+.card__info-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+h4 {
+  color: $gray-color;
+}
