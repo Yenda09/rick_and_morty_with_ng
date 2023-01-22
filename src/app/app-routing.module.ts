@@ -10,16 +10,16 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/home/1',
     pathMatch: 'full'
   },{
-    path: 'home',
+    path: 'home/:page',
     component: HomeComponent
   },{
-    path: 'episodes',
+    path: 'episodes/:page',
     component: EpisodesComponent
   },{
-    path: 'locations',
+    path: 'locations/:page',
     component: LocationsComponent
   },{
     path: 'item/:section/:id',

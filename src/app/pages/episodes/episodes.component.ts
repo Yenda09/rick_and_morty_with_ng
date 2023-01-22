@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api/api.service';
+import { ActivatedRoute } from "@angular/router";
 
+import { ApiService } from 'src/app/services/api/api.service';
 import { Episode } from 'src/app/models/episode.model';
 
 @Component({
@@ -10,20 +11,28 @@ import { Episode } from 'src/app/models/episode.model';
 })
 export class EpisodesComponent implements OnInit {
   allEpisodes: Episode[] = [];
-  page: number = 1;
+  page: string | null = '1';
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private apiService: ApiService
   ) { }
 
   ngOnInit(): void {
-    this.apiService.getAllEpisodes(this.page)
-      .subscribe (data => {
-        this.allEpisodes = data.results
+    this.activatedRoute.paramMap
+      .subscribe (params => {
+        this.page = params.get('page');
+
+        if (this.page != null){
+          this.apiService.getAllEpisodes(this.page)
+            .subscribe (data => {
+              this.allEpisodes = data.results
+            })
+        }
       })
   }
 
-  onPrevPage (pageNumber: number){
+  onPrevPage (pageNumber: string){
     this.page = pageNumber;
     this.apiService.getAllEpisodes(this.page)
       .subscribe (data => {
@@ -33,7 +42,7 @@ export class EpisodesComponent implements OnInit {
       })
   }
 
-  onNextPage (pageNumber: number){
+  onNextPage (pageNumber: string){
     this.page = pageNumber;
     this.apiService.getAllEpisodes(this.page)
       .subscribe (data => {

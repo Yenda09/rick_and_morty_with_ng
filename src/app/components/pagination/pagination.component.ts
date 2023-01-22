@@ -7,10 +7,11 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class PaginationComponent implements OnInit {
   
-  @Output() prev = new EventEmitter<number>();
-  @Output() next = new EventEmitter<number>();
+  @Output() prev = new EventEmitter<string>();
+  @Output() next = new EventEmitter<string>();
   
   pageNumber: number = 1;
+  emittedNumber: string = '1';
   maxNumberPage: number = 42;
   
   constructor() { }
@@ -21,9 +22,9 @@ export class PaginationComponent implements OnInit {
 
   whereIam (){
     let myPathName = window.location.pathname;
-    if (myPathName === '/episodes'){
+    if (myPathName.startsWith('/episodes')){
       this.maxNumberPage = 3;
-    } else if (myPathName === '/locations'){
+    } else if (myPathName.startsWith('/locations')){
       this.maxNumberPage = 7;
     } else {
       this.maxNumberPage = 42;
@@ -33,13 +34,15 @@ export class PaginationComponent implements OnInit {
   prevPage(){
     if (this.pageNumber !== 1){
       this.pageNumber -= 1;
-      this.prev.emit(this.pageNumber);
+      this.emittedNumber = this.pageNumber.toString();
+      this.prev.emit(this.emittedNumber);
     }
   }
   nextPage (){
     if (this.pageNumber < this.maxNumberPage){
       this.pageNumber += 1;
-      this.next.emit(this.pageNumber);
+      this.emittedNumber = this.pageNumber.toString();
+      this.next.emit(this.emittedNumber);
     }
   }
 }

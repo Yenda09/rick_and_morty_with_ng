@@ -67,11 +67,11 @@ export class GenericCardComponent implements OnInit {
 
   navigator (){
     let myPathName = window.location.pathname;
-    if (myPathName === '/episodes'){
+    if (myPathName.startsWith('/episodes')){
       this.homePage = false;
       this.episodePage = true;
       this.locationPage = false;
-    } else if (myPathName === '/locations'){
+    } else if (myPathName.startsWith('/locations')){
       this.homePage = false;
       this.episodePage = false;
       this.locationPage = true;

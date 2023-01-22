@@ -18,7 +18,7 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  getAllCharacters (page: number){
+  getAllCharacters (page: string){
     return this.http.get<ApiResponseCharacters>(`${this.apiUrl}/character`, {
       params: { page }
     });
@@ -27,7 +27,7 @@ export class ApiService {
     return this.http.get<Character>(`${this.apiUrl}/character/${id}`)
   }
 
-  getAllEpisodes (page: number){
+  getAllEpisodes (page: string){
     return this.http.get<ApiResponseEpisodes>(`${this.apiUrl}/episode`, {
       params: { page }
     });
@@ -36,7 +36,7 @@ export class ApiService {
     return this.http.get<Episode>(`${this.apiUrl}/episode/${id}`)
   }
 
-  getAllLocations (page: number){
+  getAllLocations (page: string){
     return this.http.get<ApiResponseLocations>(`${this.apiUrl}/location`, {
       params: { page }
     });
